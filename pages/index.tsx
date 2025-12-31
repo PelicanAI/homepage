@@ -550,14 +550,102 @@ export default function Home() {
           background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 50%, transparent 100%);
         }
 
-        .pricing-card {
-          max-width: 500px;
-          margin: 0 auto;
+        /* Credits Explanation */
+        .credits-explainer {
+          max-width: 1000px;
+          margin: 0 auto 4rem;
+          text-align: center;
+        }
+
+        .credits-explainer h3 {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          color: var(--accent-cyan);
+        }
+
+        .credits-explainer p {
+          color: var(--text-secondary);
+          font-size: 1.1rem;
+          max-width: 700px;
+          margin: 0 auto 2rem;
+        }
+
+        .credit-types-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 1rem;
+        }
+
+        .credit-type {
           background: var(--bg-primary);
-          border: 2px solid var(--accent-purple);
-          padding: 3rem;
+          border: 1px solid var(--border-color);
+          padding: 1.25rem 1rem;
+          transition: all 0.2s;
+        }
+
+        .credit-type:hover {
+          border-color: var(--border-accent);
+        }
+
+        .credit-type-name {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.7rem;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 0.5rem;
+        }
+
+        .credit-type-amount {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 2rem;
+          color: var(--accent-purple);
+          line-height: 1;
+        }
+
+        .credit-type-amount span {
+          font-size: 0.9rem;
+          color: var(--text-muted);
+        }
+
+        .credit-type-example {
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          margin-top: 0.5rem;
+          line-height: 1.4;
+        }
+
+        /* Pricing Tiers Grid */
+        .pricing-tiers {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .pricing-card {
+          background: var(--bg-primary);
+          border: 1px solid var(--border-color);
+          padding: 2.5rem;
           text-align: center;
           position: relative;
+          transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+          border-color: var(--border-accent);
+          transform: translateY(-5px);
+        }
+
+        .pricing-card.featured {
+          border: 2px solid var(--accent-purple);
+          transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+          transform: scale(1.05) translateY(-5px);
         }
 
         .pricing-badge {
@@ -575,23 +663,67 @@ export default function Home() {
           padding: 0.5rem 1rem;
         }
 
+        .pricing-tier-name {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 1.75rem;
+          letter-spacing: 0.05em;
+          margin-bottom: 0.5rem;
+        }
+
+        .pricing-for {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.7rem;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-bottom: 1.5rem;
+        }
+
         .pricing-amount {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 5rem;
+          font-size: 4rem;
           line-height: 1;
-          margin: 1rem 0;
+          margin: 0.5rem 0;
         }
 
         .pricing-amount span {
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: var(--text-muted);
         }
 
         .pricing-period {
           font-family: 'JetBrains Mono', monospace;
-          font-size: 0.85rem;
+          font-size: 0.8rem;
           color: var(--text-muted);
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .pricing-credits {
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-color);
+          padding: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .pricing-credits-amount {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 2rem;
+          color: var(--accent-cyan);
+        }
+
+        .pricing-credits-label {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.7rem;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .pricing-effective {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          margin-bottom: 1.5rem;
         }
 
         .pricing-features {
@@ -601,12 +733,12 @@ export default function Home() {
 
         .pricing-feature {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 0.75rem;
-          padding: 0.75rem 0;
+          padding: 0.6rem 0;
           border-bottom: 1px solid var(--border-color);
           color: var(--text-secondary);
-          font-size: 0.95rem;
+          font-size: 0.9rem;
         }
 
         .pricing-feature:last-child {
@@ -616,6 +748,113 @@ export default function Home() {
         .pricing-check {
           color: var(--accent-cyan);
           font-weight: bold;
+          flex-shrink: 0;
+        }
+
+        /* Market Positioning */
+        .market-comparison {
+          max-width: 900px;
+          margin: 5rem auto 0;
+          text-align: center;
+        }
+
+        .market-comparison h3 {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .market-comparison > p {
+          color: var(--text-secondary);
+          margin-bottom: 2rem;
+        }
+
+        .market-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1rem;
+        }
+
+        .market-item {
+          background: var(--bg-primary);
+          border: 1px solid var(--border-color);
+          padding: 1.5rem 1rem;
+          transition: all 0.2s;
+        }
+
+        .market-item.pelican-item {
+          border-color: var(--accent-purple);
+          background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(168, 85, 247, 0.1) 100%);
+        }
+
+        .market-item-name {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 0.75rem;
+        }
+
+        .market-item-price {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 1.75rem;
+          line-height: 1.2;
+        }
+
+        .market-item.pelican-item .market-item-price {
+          color: var(--accent-purple);
+        }
+
+        .market-item-annual {
+          font-size: 0.7rem;
+          color: var(--text-muted);
+          font-family: 'JetBrains Mono', monospace;
+        }
+
+        .savings-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+          color: var(--bg-primary);
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.8rem;
+          font-weight: 600;
+          padding: 0.75rem 1.5rem;
+          margin-top: 2rem;
+          letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 1024px) {
+          .pricing-tiers {
+            grid-template-columns: 1fr;
+            max-width: 450px;
+          }
+
+          .pricing-card.featured {
+            transform: none;
+          }
+
+          .pricing-card.featured:hover {
+            transform: translateY(-5px);
+          }
+
+          .credit-types-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+
+          .market-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 640px) {
+          .credit-types-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .market-grid {
+            grid-template-columns: 1fr 1fr;
+          }
         }
 
         .every-trader-section {
@@ -909,6 +1148,7 @@ export default function Home() {
             <a href="#features">Features</a>
             <a href="#team">Team</a>
             <a href="#pricing">Pricing</a>
+            <a href="/faq">FAQ</a>
             <a href="https://pelicantrading.org" className="btn-primary">Launch App →</a>
           </div>
         </div>
@@ -1159,41 +1399,183 @@ export default function Home() {
         <div className="section-inner">
           <div className="section-header animate-on-scroll">
             <div className="section-tag">// Pricing</div>
-            <h2 className="section-title">ONE PLAN. EVERYTHING INCLUDED.</h2>
+            <h2 className="section-title">CREDIT-BASED PRICING THAT SCALES WITH YOU</h2>
           </div>
-          <div className="pricing-card bracket-box animate-on-scroll">
-            <div className="pricing-badge">Pro Trader</div>
-            <div className="pricing-amount">$50<span>/mo</span></div>
-            <div className="pricing-period">Cancel anytime. No contracts.</div>
-            <div className="pricing-features">
-              <div className="pricing-feature">
-                <span className="pricing-check">✓</span>
-                Unlimited questions & conversations
+
+          {/* Credits Explainer */}
+          <div className="credits-explainer animate-on-scroll">
+            <h3>HOW CREDITS WORK</h3>
+            <p>Credits represent analytical workload, not raw API calls. Simple questions cost less. Complex analysis costs more. You always know what you&apos;re spending.</p>
+            <div className="credit-types-grid">
+              <div className="credit-type bracket-box">
+                <div className="credit-type-name">Conversation</div>
+                <div className="credit-type-amount">2 <span>credits</span></div>
+                <div className="credit-type-example">&quot;What&apos;s a moving average?&quot;</div>
               </div>
-              <div className="pricing-feature">
-                <span className="pricing-check">✓</span>
-                Live data on 10,000+ tickers
+              <div className="credit-type bracket-box">
+                <div className="credit-type-name">Price Check</div>
+                <div className="credit-type-amount">10 <span>credits</span></div>
+                <div className="credit-type-example">&quot;What&apos;s AAPL trading at?&quot;</div>
               </div>
-              <div className="pricing-feature">
-                <span className="pricing-check">✓</span>
-                Plain-English backtesting
+              <div className="credit-type bracket-box">
+                <div className="credit-type-name">Basic Analysis</div>
+                <div className="credit-type-amount">25 <span>credits</span></div>
+                <div className="credit-type-example">&quot;Is NVDA overbought?&quot;</div>
               </div>
-              <div className="pricing-feature">
-                <span className="pricing-check">✓</span>
-                Remembers your trading context
+              <div className="credit-type bracket-box">
+                <div className="credit-type-name">Event Study</div>
+                <div className="credit-type-amount">75 <span>credits</span></div>
+                <div className="credit-type-example">&quot;How does SPY react after CPI?&quot;</div>
               </div>
-              <div className="pricing-feature">
-                <span className="pricing-check">✓</span>
-                One-click shareable reports
-              </div>
-              <div className="pricing-feature">
-                <span className="pricing-check">✓</span>
-                New features as we ship them
+              <div className="credit-type bracket-box">
+                <div className="credit-type-name">Deep Analysis</div>
+                <div className="credit-type-amount">200 <span>credits</span></div>
+                <div className="credit-type-example">&quot;Backtest this strategy 1 year&quot;</div>
               </div>
             </div>
-            <a href="https://pelicantrading.org" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-              Get Started →
-            </a>
+          </div>
+
+          {/* Pricing Tiers */}
+          <div className="pricing-tiers">
+            {/* Starter Tier */}
+            <div className="pricing-card bracket-box animate-on-scroll">
+              <div className="pricing-tier-name">STARTER</div>
+              <div className="pricing-for">Exploration & Learning</div>
+              <div className="pricing-amount">$29<span>/mo</span></div>
+              <div className="pricing-period">Cancel anytime</div>
+              <div className="pricing-credits">
+                <div className="pricing-credits-amount">1,000</div>
+                <div className="pricing-credits-label">credits / month</div>
+              </div>
+              <div className="pricing-effective">~$0.029 per credit</div>
+              <div className="pricing-features">
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Full AI assistant access
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Live data on 10,000+ tickers
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Trading education & coaching
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Basic technical analysis
+                </div>
+              </div>
+              <a href="https://pelicantrading.org" className="btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
+                Get Started →
+              </a>
+            </div>
+
+            {/* Pro Tier */}
+            <div className="pricing-card bracket-box featured animate-on-scroll">
+              <div className="pricing-badge">Most Popular</div>
+              <div className="pricing-tier-name">PRO</div>
+              <div className="pricing-for">Active Traders</div>
+              <div className="pricing-amount">$99<span>/mo</span></div>
+              <div className="pricing-period">Cancel anytime</div>
+              <div className="pricing-credits">
+                <div className="pricing-credits-amount">3,500</div>
+                <div className="pricing-credits-label">credits / month</div>
+              </div>
+              <div className="pricing-effective">~$0.028 per credit</div>
+              <div className="pricing-features">
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Everything in Starter
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Plain-English backtesting
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Event studies & correlation
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  One-click shareable reports
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Remembers your trading context
+                </div>
+              </div>
+              <a href="https://pelicantrading.org" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                Start Trading →
+              </a>
+            </div>
+
+            {/* Power Tier */}
+            <div className="pricing-card bracket-box animate-on-scroll">
+              <div className="pricing-tier-name">POWER</div>
+              <div className="pricing-for">Heavy & Professional Users</div>
+              <div className="pricing-amount">$249<span>/mo</span></div>
+              <div className="pricing-period">Cancel anytime</div>
+              <div className="pricing-credits">
+                <div className="pricing-credits-amount">10,000</div>
+                <div className="pricing-credits-label">credits / month</div>
+              </div>
+              <div className="pricing-effective">~$0.025 per credit</div>
+              <div className="pricing-features">
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Everything in Pro
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Multi-day tick analysis
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Institutional flow detection
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Extended backtest periods
+                </div>
+                <div className="pricing-feature">
+                  <span className="pricing-check">✓</span>
+                  Priority support
+                </div>
+              </div>
+              <a href="https://pelicantrading.org" className="btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
+                Go Power →
+              </a>
+            </div>
+          </div>
+
+          {/* Market Comparison */}
+          <div className="market-comparison animate-on-scroll">
+            <h3>INSTITUTIONAL INTELLIGENCE. RETAIL PRICING.</h3>
+            <p>Pelican delivers the analysis power of institutional terminals at a fraction of the cost.</p>
+            <div className="market-grid">
+              <div className="market-item">
+                <div className="market-item-name">Bloomberg</div>
+                <div className="market-item-price">~$24,000</div>
+                <div className="market-item-annual">per year</div>
+              </div>
+              <div className="market-item">
+                <div className="market-item-name">Refinitiv Eikon</div>
+                <div className="market-item-price">~$22,000</div>
+                <div className="market-item-annual">per year</div>
+              </div>
+              <div className="market-item">
+                <div className="market-item-name">FactSet</div>
+                <div className="market-item-price">~$12,000</div>
+                <div className="market-item-annual">per year</div>
+              </div>
+              <div className="market-item pelican-item">
+                <div className="market-item-name">Pelican</div>
+                <div className="market-item-price">$348 – $2,988</div>
+                <div className="market-item-annual">per year</div>
+              </div>
+            </div>
+            <div className="savings-badge">~99% CHEAPER THAN INSTITUTIONAL TERMINALS</div>
           </div>
         </div>
       </section>

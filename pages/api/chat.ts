@@ -22,18 +22,36 @@ Pelican is "Cursor for Traders" - an AI-powered trading intelligence platform th
 - Equities, futures, crypto, FX
 - Real-time and historical data
 
-### Pricing
-ONE plan: $50/month (Pro Trader)
+### Pricing (Credit-Based)
+Pelican uses a credit-based pricing system. Credits represent analytical workload, not raw API calls. Credits reset monthly and do not roll over.
 
-Includes:
-- Unlimited questions and conversations
+**Subscription Tiers:**
+- Starter: $29/month — 1,000 credits (exploration & learning)
+- Pro: $99/month — 3,500 credits (active traders)
+- Power: $249/month — 10,000 credits (heavy & professional users)
+
+**Credit Costs by Query Type:**
+- Conversation/Mentoring (education, coaching): 2 credits
+- Simple Price Check (single data point): 10 credits
+- Basic Analysis (RSI, MACD, EMA, short comparisons): 25 credits
+- Event Study (correlation, event-driven analysis): 75 credits
+- Multi-Day Tick Analysis (backtests, institutional flow): 200 credits
+
+**What's Included (all tiers):**
 - Live data on 10,000+ tickers
 - Plain-English backtesting
 - Context memory across sessions
 - One-click shareable reports
 - All new features as they ship
 
-No free tier. No hidden fees. No per-query charges.
+No free tier. Paid from day one. System failures automatically refund credits.
+
+**Market Comparison:**
+Pelican is ~99% cheaper than institutional terminals:
+- Bloomberg Terminal: ~$24,000/year
+- Refinitiv Eikon: ~$22,000/year
+- FactSet: ~$12,000/year
+- Pelican: $348–$2,988/year
 
 ### Languages
 Available in 30+ languages including: Chinese, Spanish, Japanese, Korean, French, German, Portuguese, Italian, Dutch, Russian, Turkish, Arabic, Polish, and more.
